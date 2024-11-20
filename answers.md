@@ -5,7 +5,8 @@
 App.jsx
 
 ```jsx
-// Write your code here
+
+import Gallery from './components/Gallery.jsx'
 
 ```
 
@@ -29,26 +30,25 @@ const props = {
 
 // Write your code here
 
+const {name, packaging, temperature} = props;
+
 
 ```
 
 ### 3. State in React
 
-
+State is a React object and contains data about a component. If useState is being used, React will update the browser if the component's state changes. 
 
 ### 4. Using state in React
 
-```jsx
+```js
 
+import { useState } from 'react'
 
-function Tea(props) {
-  // Add your code here
-
+function Tea (props) {
+  const[isBrewing, setIsBrewing] = useState(true);
 }
 ```
-
-Inside the `<Tea />` component, add state that captures whether the Tea is currently brewing.
-When the component is first rendered, the brewing state should be `true`.
 
 ### 5. Connect the handler
 
@@ -63,7 +63,7 @@ function Tea(props) {
 
   return <>
     <h1>Tea Time</h1>
-    <button>Check if tea is ready</button>
+    <button onClick={checkTime}>Check if tea is ready</button>
   </>
 }
 ```
